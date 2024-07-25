@@ -44,7 +44,7 @@ th {
 }
 .danger {background-color: #607d8b;
   color: white;
-  padding: 8px;
+  padding: 10px;
   }
   .jumbotron {
     position: relative;
