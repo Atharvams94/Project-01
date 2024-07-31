@@ -1,15 +1,6 @@
 import numpy as np
 
-def fft(data):
-  """
-  Performs the Fast Fourier Transform (FFT) on a given data set.
-
-  Args:
-      data: A numpy array containing the data for which to compute the FFT.
-
-  Returns:
-      A numpy array containing the frequency spectrum of the data.
-  """
+def fft(data)
   return np.fft.fft(data)
 
 # Sample data
@@ -87,29 +78,8 @@ class WeatherFetcher:
             await file.write(json.dumps(data, indent=4))
         print(f"Weather data saved to {filename}")
 
-    def parse_weather_data(self, data):
-        weather_desc = data['weather'][0]['description']
-        temp = data['main']['temp']
-        feels_like = data['main']['feels_like']
-        humidity = data['main']['humidity']
-        wind_speed = data['wind']['speed']
-
-        return f"""
-        Weather: {weather_desc}
-        Temperature: {temp}°C
-        Feels Like: {feels_like}°C
         Humidity: {humidity}%
-        Wind Speed: {wind_speed} m/s
-        """
-
-    async def get_and_save_weather(self, city):
-        try:
-            data = await self.fetch_weather(city)
-            weather_report = self.parse_weather_data(data)
-            print(f"Weather in {city}:\n{weather_report}")
-            await self.save_weather_data(city, data)
-        except Exception as e:
-            print(f"Error fetching weather data for {city}: {e}")
+      
 
 async def main():
     api_key = 'your_openweathermap_api_key'  # Replace with your actual API key
